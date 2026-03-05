@@ -24,10 +24,6 @@ resource "aws_instance" "app" {
   subnet_id              = var.private_subnet
   iam_instance_profile   = aws_iam_instance_profile.profile.name
 
-  user_data = <<EOF
-#!/bin/bash
-echo "Hello from Terraform" > /home/ec2-user/hello.txt
-EOF
 
   tags = {
     Name        = "${var.env}-app-instance"
