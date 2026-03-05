@@ -2,10 +2,10 @@
 
 ## Overview
 
-This project provisions basic AWS infrastructure using **Terraform**.
+This project contains Terraform code to provision a basic AWS infrastructure setup.
 The infrastructure is organized using **Terraform modules** and supports **two environments: dev and prod**.
 
-The following resources are created:
+The infrastructure includes:
 
 * VPC (10.0.0.0/16)
 * 2 Public Subnets
@@ -19,20 +19,14 @@ The following resources are created:
 
 # Project Structure
 
-terraform-aws-infrastructure/
+The repo is organized into a terraform-aws-infrastructure/ folder. 
 
-modules/
-    vpc/ → Creates VPC, subnets, and Internet Gateway
-    ec2/ → Creates EC2 instance with IAM role
-    s3/ → Creates S3 bucket for logs
-
-environments/
-    dev/ → Development environment configuration
-    prod/ → Production environment configuration
-
-README.md
-
----
+Inside, there's a modules/ directory with three subfolders: 
+vpc/ handles the VPC, subnets, and Internet Gateway setup; e
+c2/ takes care of spinning up the EC2 instance along with its IAM role; and 
+s3/ sets up the S3 bucket used for storing logs.
+For environment configs, there's an environments/ folder with separate dev/ and prod/ directories. 
+A README.md lives at the root.
 
 # Environments
 
@@ -58,7 +52,7 @@ These files define the infrastructure and environment-specific values.
 
 # Modules
 
-Three Terraform modules are used to organize the infrastructure.
+The infrastructure is divided into three Terraform modules.
 
 ### VPC Module
 
@@ -78,7 +72,7 @@ Creates:
 * IAM instance profile
 * User data configuration
 
-The EC2 instance is deployed inside a **private subnet**.
+The EC2 instance is deployed inside a **private subnet**. because the instance does not need direct public access.
 
 ### S3 Module
 
