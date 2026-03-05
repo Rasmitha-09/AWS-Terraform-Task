@@ -19,13 +19,18 @@ The infrastructure includes:
 
 # Project Structure
 
-The repo is organized into a terraform-aws-infrastructure/ folder. 
+The repo is organized into a terraform-aws-infrastructure/ folder.
 
-Inside, there's a modules/ directory with three subfolders: 
-vpc/ handles the VPC, subnets, and Internet Gateway setup; e
-c2/ takes care of spinning up the EC2 instance along with its IAM role; and 
-s3/ sets up the S3 bucket used for storing logs.
+Inside, there's a modules/ directory with three subfolders:
+
+VPC handles the VPC, subnets, and Internet Gateway setup.
+
+EC2 takes care of spinning up the EC2 instance along with its IAM role
+
+S3/ sets up the S3 bucket used for storing logs.
+
 For environment configs, there's an environments/ folder with separate dev/ and prod/ directories. 
+
 A README.md lives at the root.
 
 # Environments
